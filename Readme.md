@@ -1,10 +1,9 @@
-Atividade Senai 08/03/2024
+Atividade SENAI 08/03/2024
 
 Requisitos:
 
 1. Cabeçalho:
 O logotipo do pet shop, que pode ser clicável para retornar à página inicial.
-
 Links para as principais seções do site, como "Home", "Sobre", "Serviços", "Produtos", "Contato", entre outros.
 Incluindo telefone, e-mail e endereço.
 
