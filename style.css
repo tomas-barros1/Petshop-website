@@ -46,6 +46,7 @@ nav a {
 .slides {
   width: 40%;
   max-height: 410px;
+  min-width: 300px;
   margin: 0 auto; 
 }
 
@@ -104,4 +105,16 @@ footer a {
   nav ul {
       flex-direction: column;
   }
+
+  #depoimentoClientes {
+    max-width: 400px;
+    height: auto;
+  }
+
+}
+
+@media only screen and (max-width: 788px) {
+  header {
+    min-width: fit-content;
+}
 }
