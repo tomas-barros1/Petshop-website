@@ -1,0 +1,86 @@
+* {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#logo {
+  width: 150px;
+  height: auto;
+  border-radius: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+h1 {
+  margin: 10px;
+  color: black;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+img {
+  width: 350px;
+  height: 300px;
+}
+
+.itemCompra {
+  padding: 10px;
+  border: 1px solid black;
+  width: 440px;
+  height: fit-content;
+  margin: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.preco {
+  color: green;
+  margin-top: 10px;
+}
+
+#compraSegura {
+  font-size: 22px;
+  margin-right: 30px;
+}
+
+#buscarCep {
+  text-align: center;
+}
+
+form, #endereco {
+  margin: 20px;
+  font-size: 22px;
+}
+
+#endereco {
+  padding: 10px;
+  background-color: rgb(22, 151, 22);
+  color: white;
+  border-radius: 20px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+input {
+  padding: 10px;
+}
+
+input[type="submit"] {
+  background-color: rgb(22, 151, 22);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
