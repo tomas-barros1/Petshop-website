@@ -1,8 +1,10 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-header, section, footer {
+header,
+section,
+footer {
   margin: 20px;
 }
 
@@ -27,27 +29,27 @@ header {
 #produtos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .item {
-  width: calc(20% - 20px); 
-  margin-bottom: 20px; 
+  width: calc(20% - 20px);
+  margin-bottom: 20px;
   background-color: #e0e0e0;
   text-align: center;
   padding: 5px;
 }
 
 .item h3 {
-  margin-top: 0; 
+  margin-top: 0;
 }
 
 .item p {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .item img {
-  max-width: 100%; 
+  max-width: 100%;
 }
 
 nav ul {
@@ -80,7 +82,7 @@ img {
   width: 40%;
   max-height: 410px;
   min-width: 300px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 #centralizar {
@@ -109,7 +111,7 @@ button {
 form {
   display: grid;
   gap: 10px;
-  max-width: 400px; 
+  max-width: 400px;
 }
 
 label {
@@ -137,18 +139,17 @@ footer a {
 
 @media only screen and (max-width: 600px) {
   header {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   nav ul {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   #depoimentoClientes {
     max-width: 400px;
     height: auto;
   }
-
 }
 
 @media only screen and (max-width: 788px) {

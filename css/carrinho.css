@@ -1,5 +1,5 @@
 * {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
 
 nav {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
   background-color: #f0f0f0;
   padding: 10px;
@@ -58,7 +58,7 @@ img {
   text-align: center;
 }
 
-form, #endereco {
+form {
   margin: 20px;
   font-size: 22px;
 }
@@ -67,8 +67,7 @@ form, #endereco {
   padding: 10px;
   background-color: rgb(22, 151, 22);
   color: white;
-  border-radius: 20px;
-  margin: 0 auto;
+  margin: 30px auto;
   max-width: 300px;
 }
 
@@ -83,4 +82,23 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
   margin-top: 10px;
+}
+
+button {
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.adicionar {
+  background-color: rgb(22, 151, 22);
+  color: white;
+}
+
+.remover {
+  background-color: #981818;
+  color: white;
 }
