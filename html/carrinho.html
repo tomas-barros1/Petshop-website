@@ -2,88 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrinho de compras</title>
-    <link rel="shortcut icon" href="../img/petshop.png" type="image/x-icon" />
     <link rel="stylesheet" href="../css/carrinho.css" />
-    <script src="../script/cep.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/petshop.png" type="image/x-icon" />
+    <script src="../script/script.js" defer></script>
     <script src="../script/carrinho.js" defer></script>
+    <script src="../script/cep.js" defer></script>
+    <title>Carrinho de Compras</title>
   </head>
+
   <body>
     <nav>
       <a href="index.html"
-        ><img id="logo" src="../img/logo.jpg" alt="logo"
+        ><img id="logo" src="../img/logo.jpg" alt="Logo Pet Shop"
       /></a>
-      <p id="compraSegura">Compra segura</p>
+      <h1>Carrinho de Compras</h1>
+      <a href="index.html"><h1>Voltar para a Loja</h1></a>
+      <button
+        id="limparCarrinho"
+        onclick="cleanCart()"
+      >
+        Limpar Carrinho
+      </button>
     </nav>
 
-    <h1>Carrinho de compras</h1>
-
     <main>
-      <div class="itemCompra">
-        <img src="../img/shampoo.png" alt="" />
-        <p>Shampoo para cães</p>
-        <button class="adicionar" onclick="adicionarPreco('valorShampoo', 10)">
-          +
-        </button>
-        <p>Preço: <span data-quantidade="0" id="valorShampoo">R$10,00</span></p>
-        <button class="remover" onclick="removerPreco('valorShampoo', 10)">
-          -
-        </button>
-      </div>
-
-      <div class="itemCompra">
-        <img src="../img/racao.png" alt="" />
-        <p>Ração premium</p>
-        <button class="adicionar" onclick="adicionarPreco('valorRacao', 30)">
-          +
-        </button>
-        <p>Preço: <span data-quantidade="0" id="valorRacao">R$30,00</span></p>
-        <button class="remover" onclick="removerPreco('valorRacao', 30)">
-          -
-        </button>
-      </div>
-
-      <div class="itemCompra">
-        <img src="../img/brinquedo.png" alt="" />
-        <p>Brinquedo interativo</p>
-        <button
-          class="adicionar"
-          onclick="adicionarPreco('valorBrinquedo', 15)"
-        >
-          +
-        </button>
-        <p>
-          Preço: <span data-quantidade="0" id="valorBrinquedo">R$15,00</span>
-        </p>
-        <button class="remover" onclick="removerPreco('valorBrinquedo', 15)">
-          -
-        </button>
-      </div>
-
-      <div class="itemCompra">
-        <img src="../img/cama.png" alt="" />
-        <p>Cama Acolchoada</p>
-        <button class="adicionar" onclick="adicionarPreco('valorCama', 40)">
-          +
-        </button>
-        <p>Preço: <span data-quantidade="0" id="valorCama">R$40,00</span></p>
-        <button class="remover" onclick="removerPreco('valorCama', 40)">
-          -
-        </button>
-      </div>
-
-      <div class="itemCompra">
-        <img src="../img/kitHigiene.png" alt="" />
-        <p>Kit higiene</p>
-        <button class="adicionar" onclick="adicionarPreco('valorHigiene', 25)">
-          +
-        </button>
-        <p>Preço: <span data-quantidade="0" id="valorHigiene">R$25,00</span></p>
-        <button class="remover" onclick="removerPreco('valorHigiene', 25)">
-          -
-        </button>
-      </div>
+      <ul id="cart"></ul>
     </main>
 
     <div id="buscarCep">

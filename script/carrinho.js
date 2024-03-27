@@ -1,23 +1,53 @@
-function formatarPreco(preco) {
-  return preco.toLocaleString('pt-BR', {minimumFractionDigits: 2});
+let totalElement;
+
+function displayCart() {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const cartList = document.getElementById("cart");
+  totalElement = document.createElement("h3");
+  let total = 0;
+
+  cartList.innerHTML = "";
+
+  if (cart && cart.length > 0) {
+    cart.forEach((item) => {
+      const cartItem = document.createElement("li");
+
+      const itemImage = document.createElement("img");
+      itemImage.src = item.image;
+      itemImage.alt = item.name;
+      cartItem.appendChild(itemImage);
+
+      const itemName = document.createElement("p");
+      itemName.textContent = item.name;
+      cartItem.appendChild(itemName);
+
+      const itemPrice = document.createElement("p");
+      itemPrice.textContent = item.price;
+      cartItem.appendChild(itemPrice);
+
+      cartList.appendChild(cartItem);
+
+      total += parseFloat(item.price.replace("R$", "").replace(",", "."));
+    });
+
+    totalElement.textContent = `Total: R$ ${total.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+    })}`;
+    cartList.parentNode.insertBefore(totalElement, cartList.nextSibling);
+  } else {
+    cartList.innerHTML = "<h1>Carrinho vazio</h1>";
+  }
 }
 
-function adicionarPreco(id, preco) {
-  let elementoPreco = document.getElementById(id);
-  let valorAtual = parseFloat(elementoPreco.textContent.replace('R$', '').replace(',', '.'));
-  let novoValor = valorAtual + preco;
-  let quantidade = parseInt(elementoPreco.dataset.quantidade) + 1;
-  elementoPreco.textContent = "R$" + formatarPreco(novoValor) + " (Quantidade: " + quantidade + ")";
-  elementoPreco.dataset.quantidade = quantidade;
-}
+window.onload = displayCart;
 
-function removerPreco(id, preco) {
-  let elementoPreco = document.getElementById(id);
-  let valorAtual = parseFloat(elementoPreco.textContent.replace('R$', '').replace(',', '.'));
-  let novoValor = valorAtual - preco;
-  if (novoValor < 0) novoValor = 0;
-  let quantidade = parseInt(elementoPreco.dataset.quantidade) - 1;
-  if (quantidade < 0) quantidade = 0;
-  elementoPreco.textContent = "R$" + formatarPreco(novoValor) + " (Quantidade: " + quantidade + ")";
-  elementoPreco.dataset.quantidade = quantidade;
+function cleanCart() {
+  if (confirm("Tem certeza de que quer remover os itens do seu carrinho?")) {
+    localStorage.removeItem("cart");
+    displayCart();
+    const totalElement = document.querySelector("h3");
+    if (totalElement) {
+      totalElement.textContent = `Total: R$ 0,00`;
+    }
+  }
 }

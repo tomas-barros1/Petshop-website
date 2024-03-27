@@ -1,17 +1,25 @@
-var slideIndex = 1;
-showDivs(slideIndex);
+function addToCart(event) {
+  alert("Produto adicionado com sucesso!");
+  const product = event.target.parentNode;
+  const productName = product.querySelector("h3").innerText;
+  const productImage = product.querySelector("img").src;
+  const productPrice = product.querySelector("span").innerText;
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+  const productData = {
+    name: productName,
+    image: productImage,
+    price: productPrice,
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push(productData);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "block";
-}
+const buyButtons = document.querySelectorAll(".buy-btn");
+
+buyButtons.forEach((button) => {
+  button.addEventListener("click", addToCart);
+});
