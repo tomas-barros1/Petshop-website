@@ -104,3 +104,31 @@ button {
   margin: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  ul {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 800px) {
+  ul {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  body {
+    text-align: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column; 
+  }
+}
